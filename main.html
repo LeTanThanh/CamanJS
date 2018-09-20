@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		CamanJS
+	</title>
+
+	<!-- import jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- import Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- import Bootstrap Slider -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
+
+	<!-- import CamanJS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="scripts/main.js"></script>
+<body>
+	<div class="container">
+		<h2>Caman JS</h2>
+	
+		<form class="form-horizontal">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="js-input-file">
+				      		<h3>Preview Image</h3>
+				      	</label>
+				      	<div class="col-sm-4">
+				      		<img id="js-img" src="images/no_image.png" style="width: 100%; height: 360px; object-fit: cover;">
+							<img id="js-img-hidden" src="" style="display: none">
+				      	</div>
+			  		</div>
+			  	</div>
+		  	</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="js-input-file">
+		      				Select file
+		      			</label>
+		      			<div class="col-sm-10">
+		      				<input type="file" class="form-control" id="js-input-file">
+		      			</div>
+	  				</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-brightness">
+				      		Brightness
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-brightness"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-contrast">
+		      				Contrast
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-contrast"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+
+			<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-saturation">
+				      		Saturation
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-saturation"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-vibrance">
+		      				Vibrance
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-vibrance"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+			<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-exposure">
+				      		Exposure
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-exposure"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-hue">
+		      				Hue
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-hue"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-sepia">
+				      		Sepia
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-sepia"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-gamma">
+		      				Gamma
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-gamma"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-noise">
+				      		Noise
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-noise"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-clip">
+		      				Clip
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-clip"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-sm-6">
+		  			<div class="form-group">
+				      	<label class="control-label col-sm-2" for="js-input-sharpen">
+				      		Sharpen
+				      	</label>
+				      	<div class="col-sm-10">
+				        	<input type="text" class="form-control" id="js-input-sharpen"
+				        		data-provide="slider"
+				        		data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+				      	</div>
+			    	</div>
+	  			</div>
+
+	  			<div class="col-sm-6">
+	  				<div class="form-group">
+		      			<label class="control-label col-sm-2" for="js-input-stackblur">
+		      				Stackblur
+		      			</label>
+		      			<div class="col-sm-10">
+		        			<input type="text" class="form-control" id="js-input-stackblur"
+		        				data-provide="slider"
+		        				data-slider-min="-100"
+    							data-slider-max="100"
+    							data-slider-value="0"
+    							data-slider-step="1">
+		      			</div>
+		    		</div>
+	  			</div>
+	  		</div>
+
+        <div class="row">
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-greyscale">
+	              	Greyscale
+	            </button>
+	        </div>
+
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-invert">
+	              	Invert
+	            </button>
+	        </div>
+
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-vintage">
+	              	Vintage
+	            </button>
+	        </div>
+
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-lomo">
+	              	Lomo
+	            </button>
+	        </div>
+
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-clarity">
+	              	Clarity
+	            </button>
+	        </div>
+
+			<div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-sincity">
+	              	Sin City
+	            </button>
+	        </div>
+
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-primary" id="js-button-sunrise">
+	              	Sunrise
+	            </button>
+	        </div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-crossprocess">
+              		Cross Process
+            	</button>
+          	</div>
+
+          
+        	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-orangepeel">
+              		Orange Peel
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-love">
+              		Love
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-grungy">
+              		Grungy
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-jarques">
+              		Jarques
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-pinhole">
+              		Pinhole
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-oldboot">
+              		Old Boot
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-glowingsun">
+              		Glowing Sun
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-hazydays">
+              		Hazy Days
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-hermajesty">
+              		Her Majesty
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-nostalgia">
+              		Nostalgia
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-hemingway">
+              		Hemingway
+            	</button>
+          	</div>
+
+          	<div class="btn-group">
+            	<button type="button" class="btn btn-primary" id="js-button-concentrate">
+              		Concentrate
+            	</button>
+          	</div>
+		</form>
+	</div>
+</body>
+</html>
